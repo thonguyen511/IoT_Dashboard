@@ -31,6 +31,7 @@ body{
 .vertical_wrap{
 	position: relative;
 	height: 100%;
+	z-index: 10;
 }
 
 .vertical_bar{
