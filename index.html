@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="img/smart-house.png" type="image/icon type">
+	<title>My IoT Dashboard</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/70e0ddc3b9.js" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="wrapper_inner">
+			<div class="vertical_wrap">
+				<div class="backdrop"></div>
+				<div class="vertical_bar">
+					<div class="profile_info">
+						<div class="img_holder">
+							<img src="img/pic.png" alt="profile_pic">
+						</div>
+						<p class="title">IoT Home</p>
+						<p class="sub_title">Hello sir, how can i help you ?</p>
+					</div>
+					<ul class="menu">
+						<li><div href="#" class="tab-item active">
+							<span class="icon"><i class="fa-solid fa-couch"></i></span>
+							<span class="text">Living Room</span>
+						</div></li>
+						<li><div href="#" class="tab-item">
+							<span class="icon"><i class="fa-solid fa-fire-burner"></i></span>
+							<span class="text">Kitchen</span>
+						</div></li>
+						<li><div href="#" class="tab-item">
+							<span class="icon"><i class="fa-solid fa-bed"></i></i></span>
+							<span class="text">Bedroom</span>
+						</dic></li>
+					</ul>
+
+					<ul class="social">
+						<li><a href="#"><i class="fa-regular fa-bell"></i></a></li>
+						<li><a href="#"><i class="fa-solid fa-gear"></i></a></li>
+						<li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main_container">
+				<div class="top_bar">
+					<div class="hamburger">
+						<i class="fas fa-bars"></i>
+					</div>
+					
+					<div class="logo">
+						My <span>Dashboard</span>
+					</div>
+				</div>
+				<div class="container">
+					<div class="tab-content">
+						<!-- LIVING ROOM -->
+						<div class="tab-pane active">
+							<div class="mini-container"> 					<!--1-->
+								<div class="weather-widget">					<!--thoi-tiet-->
+									<div class="panel" id="left">
+										<div class="date">
+											Sunday, 19 Mar 2023
+										</div>
+										<div class="city">
+											<p>Ho Chi Minh</p>
+											<p>Sunny</p>
+										</div>
+										<div class="cloud">
+											<img src="img/clouds-and-sun.png" alt="">
+										</div>
+									</div>
+									<div class="panel" id="right">
+										<img src="img/hcm.png" alt="">
+									</div>
+									<div class="temp">
+										<img src="img/temperature.png" alt="">Temperature (°C): <span id="temp">1</span>
+									</div>
+									<div class="hum">
+										<img src="img/humidity.png" alt=""> Humidity (%): <span id="hum">1</span>
+									</div>
+									<div class="wind">
+										<img src="img/wind.png" alt=""> Wind speed (m/s): <span id="wind">1</span>
+									</div>
+									<div class="uv">
+										<img src="img/uv.png" alt=""> UV Ray: <span id="uv">1</span>
+									</div>
+								</div>
+								<div class="air-condition-slider">				<!--may-lanh-->
+									<div class="container-slider">
+										<img src="img/air-condition.png" alt="">
+										<div class="air-slider">
+											<input type="range" min="16" max="26" step="1" value="" id="air-condition-input">
+											<div class="val" id="air-condition-result">0</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  -->
+							<div class="mini-container"> 					<!--2-->
+								<div class="led-slider">						<!--bong-den-->
+									<div class="container-slider">
+									<img src="img/light-bulb.png" alt="">
+									<input type="range" min="0" max="100" step="1" value="" id="led">
+									<div class="val" id="led-result">0</div>
+									</div>
+								</div>
+								<div class="robot-vacuum-cleaner">				<!--robot-hut-bui-->
+									<div class="logo-and-sw">
+										<div class="logo-robot">
+											<img src="img/cleaning-robot.png" alt="">
+										</div>
+										<div class="button-robot">
+											<div class="sw-robot">
+												<p>Off</p>
+												<div class="toggle"></div>
+												<p>On</p>
+											</div>
+										</div>
+									</div>
+									<div class="map">
+										<img src="img/map.png" alt="">
+									</div>									  
+								</div>
+								<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/54pwfuYNEbkbFMri4WFolD?utm_source=generator&theme=0" width="100%" height="27.5%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+							</div>
+							<!--  -->
+							<div class="mini-container"> 					<!--3-->
+								<div class="tv">								<!--tv-->
+									<img src="img/smart-tv.png" alt="">
+									<div class="channel-n-sound">
+										<p>Channel</p>
+										<div class="tv-channel">
+											<button id="decrement" onclick="stepper(this)"> <i class="fa-solid fa-angle-left"></i> </button>
+											<input type="number" min="1" max="150" step="1" value="1" id="channel" readonly>
+											<button id="increment" onclick="stepper(this)"> <i class="fa-solid fa-angle-right"></i> </button>
+										</div>
+										<p>Volume</p>
+										<div class="tv-channel">
+											<button id="down" onclick="upndown(this)"> <i class="fa-solid fa-volume-low"></i> </button>
+											<input type="number" min="0" max="100" step="1" value="30" id="volume" readonly>
+											<button id="up" onclick="upndown(this)"> <i class="fa-solid fa-volume-high"></i> </button>
+										</div>
+									</div>
+								</div>
+								<div class="speaker">							<!--loa-->
+									<div class="speaker-img">
+										<img src="img/speaker-l.png" alt="">
+										<img src="img/speaker-r.png" alt="">
+									</div>
+									<div class="volume">
+										<p>Volume</p>
+										<div class="speaker-vol">
+											<button id="low" onclick="highlow(this)"> <i class="fa-solid fa-volume-low"></i> </button>
+											<input type="number" min="0" max="100" step="1" value="80" id="spk-vol" readonly>
+											<button id="high" onclick="highlow(this)"> <i class="fa-solid fa-volume-high"></i> </button>
+										</div>
+									</div>
+								</div>
+								<div class="massage-chair">						<!--ghe-massage-->
+									<div class="radio-button">
+										<form action="#">
+											<p>
+											  <input type="radio" id="test1" name="radio-group" checked>
+											  <label for="test1">Soft vibration</label>
+											</p>
+											<p>
+											  <input type="radio" id="test2" name="radio-group">
+											  <label for="test2">Strong vibration</label>
+											</p>
+											<p>
+											  <input type="radio" id="test3" name="radio-group">
+											  <label for="test3">Strongest vibration</label>
+											</p>
+										  </form>
+									</div>
+									<img src="img/massage-chair.png" alt="">
+								</div>
+								<div class="window">					<!--window-->
+									<div class="window-and-sw">
+										<div class="window-img">
+											<img src="img/window.png" alt="">
+										</div>
+										<div class="button-win">
+											<div class="sw-win">
+												<p>Close</p>
+												<div class="toggle2"></div>
+												<p>Open</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  -->
+						</div>
+						<!-- END LIVING ROOM -->
+
+						<!-- Chỉ hoạt động ở living room, kitchen & bedroom chưa hoạt động -->
+
+						<!-- KITCHEN -->
+						<div class="tab-pane">
+							<div class="mini-container"> 					<!--2-->
+								<div class="led-slider">						<!--bong-den-->
+									<div class="container-slider">
+									<img src="img/light-bulb.png" alt="">
+									<input type="range" min="0" max="100" step="1" value="" id="led">
+									<div class="val" id="led-result">0</div>
+									</div>
+								</div>
+								<div class="robot-vacuum-cleaner">				<!--robot-hut-bui-->
+									<div class="logo-and-sw">
+										<div class="logo-robot">
+											<img src="img/cleaning-robot.png" alt="">
+										</div>
+										<div class="button-robot">
+											<div class="sw-robot">
+												<p>Off</p>
+												<div class="toggle"></div>
+												<p>On</p>
+											</div>
+										</div>
+									</div>
+									<div class="map">
+										<img src="img/map.png" alt="">
+									</div>									  
+								</div>
+								<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/54pwfuYNEbkbFMri4WFolD?utm_source=generator&theme=0" width="100%" height="27.5%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+							</div>
+							<!--  -->
+							<div class="mini-container"> 					<!--3-->
+								<div class="tv">								<!--tv-->
+									<img src="img/smart-tv.png" alt="">
+									<div class="channel-n-sound">
+										<p>Channel</p>
+										<div class="tv-channel">
+											<button id="decrement" onclick="stepper(this)"> <i class="fa-solid fa-angle-left"></i> </button>
+											<input type="number" min="1" max="150" step="1" value="1" id="channel" readonly>
+											<button id="increment" onclick="stepper(this)"> <i class="fa-solid fa-angle-right"></i> </button>
+										</div>
+										<p>Volume</p>
+										<div class="tv-channel">
+											<button id="down" onclick="upndown(this)"> <i class="fa-solid fa-volume-low"></i> </button>
+											<input type="number" min="0" max="100" step="1" value="30" id="volume" readonly>
+											<button id="up" onclick="upndown(this)"> <i class="fa-solid fa-volume-high"></i> </button>
+										</div>
+									</div>
+								</div>
+								<div class="speaker">							<!--loa-->
+									<div class="speaker-img">
+										<img src="img/speaker-l.png" alt="">
+										<img src="img/speaker-r.png" alt="">
+									</div>
+									<div class="volume">
+										<p>Volume</p>
+										<div class="speaker-vol">
+											<button id="low" onclick="highlow(this)"> <i class="fa-solid fa-volume-low"></i> </button>
+											<input type="number" min="0" max="100" step="1" value="80" id="spk-vol" readonly>
+											<button id="high" onclick="highlow(this)"> <i class="fa-solid fa-volume-high"></i> </button>
+										</div>
+									</div>
+								</div>
+								<div class="massage-chair">						<!--ghe-massage-->
+									<div class="radio-button">
+										<form action="#">
+											<p>
+											  <input type="radio" id="test1" name="radio-group" checked>
+											  <label for="test1">Soft vibration</label>
+											</p>
+											<p>
+											  <input type="radio" id="test2" name="radio-group">
+											  <label for="test2">Strong vibration</label>
+											</p>
+											<p>
+											  <input type="radio" id="test3" name="radio-group">
+											  <label for="test3">Strongest vibration</label>
+											</p>
+										  </form>
+									</div>
+									<img src="img/massage-chair.png" alt="">
+								</div>
+								<div class="window">					<!--window-->
+									<div class="window-and-sw">
+										<div class="window-img">
+											<img src="img/window.png" alt="">
+										</div>
+										<div class="button-win">
+											<div class="sw-win">
+												<p>Close</p>
+												<div class="toggle2"></div>
+												<p>Open</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  -->
+							<div class="mini-container"> 					<!--1-->
+								<div class="weather-widget">					<!--thoi-tiet-->
+									<div class="panel" id="left">
+										<div class="date">
+											Sunday, 19 Mar 2023
+										</div>
+										<div class="city">
+											<p>Ho Chi Minh</p>
+											<p>Sunny</p>
+										</div>
+										<div class="cloud">
+											<img src="img/clouds-and-sun.png" alt="">
+										</div>
+									</div>
+									<div class="panel" id="right">
+										<img src="img/hcm.png" alt="">
+									</div>
+									<div class="temp">
+										<img src="img/temperature.png" alt="">Temperature (°C): <span id="temp">1</span>
+									</div>
+									<div class="hum">
+										<img src="img/humidity.png" alt=""> Humidity (%): <span id="hum">1</span>
+									</div>
+									<div class="wind">
+										<img src="img/wind.png" alt=""> Wind speed (m/s): <span id="wind">1</span>
+									</div>
+									<div class="uv">
+										<img src="img/uv.png" alt=""> UV Ray: <span id="uv">1</span>
+									</div>
+								</div>
+								<div class="air-condition-slider">				<!--may-lanh-->
+									<div class="container-slider">
+										<img src="img/air-condition.png" alt="">
+										<div class="air-slider">
+											<input type="range" min="16" max="26" step="1" value="" id="air-condition-input">
+											<div class="val" id="air-condition-result">0</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END KITCHEN -->
+						<!-- BEDROOM -->
+						<div class="tab-pane">
+							<div class="mini-container"> 					<!--3-->
+								<div class="tv">								<!--tv-->
+									<img src="img/smart-tv.png" alt="">
+									<div class="channel-n-sound">
+										<p>Channel</p>
+										<div class="tv-channel">
+											<button id="decrement" onclick="stepper(this)"> <i class="fa-solid fa-angle-left"></i> </button>
+											<input type="number" min="1" max="150" step="1" value="1" id="channel" readonly>
+											<button id="increment" onclick="stepper(this)"> <i class="fa-solid fa-angle-right"></i> </button>
+										</div>
+										<p>Volume</p>
+										<div class="tv-channel">
+											<button id="down" onclick="upndown(this)"> <i class="fa-solid fa-volume-low"></i> </button>
+											<input type="number" min="0" max="100" step="1" value="30" id="volume" readonly>
+											<button id="up" onclick="upndown(this)"> <i class="fa-solid fa-volume-high"></i> </button>
+										</div>
+									</div>
+								</div>
+								<div class="speaker">							<!--loa-->
+									<div class="speaker-img">
+										<img src="img/speaker-l.png" alt="">
+										<img src="img/speaker-r.png" alt="">
+									</div>
+									<div class="volume">
+										<p>Volume</p>
+										<div class="speaker-vol">
+											<button id="low" onclick="highlow(this)"> <i class="fa-solid fa-volume-low"></i> </button>
+											<input type="number" min="0" max="100" step="1" value="80" id="spk-vol" readonly>
+											<button id="high" onclick="highlow(this)"> <i class="fa-solid fa-volume-high"></i> </button>
+										</div>
+									</div>
+								</div>
+								<div class="massage-chair">						<!--ghe-massage-->
+									<div class="radio-button">
+										<form action="#">
+											<p>
+											  <input type="radio" id="test1" name="radio-group" checked>
+											  <label for="test1">Soft vibration</label>
+											</p>
+											<p>
+											  <input type="radio" id="test2" name="radio-group">
+											  <label for="test2">Strong vibration</label>
+											</p>
+											<p>
+											  <input type="radio" id="test3" name="radio-group">
+											  <label for="test3">Strongest vibration</label>
+											</p>
+										  </form>
+									</div>
+									<img src="img/massage-chair.png" alt="">
+								</div>
+								<div class="window">					<!--window-->
+									<div class="window-and-sw">
+										<div class="window-img">
+											<img src="img/window.png" alt="">
+										</div>
+										<div class="button-win">
+											<div class="sw-win">
+												<p>Close</p>
+												<div class="toggle2"></div>
+												<p>Open</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  -->
+							<div class="mini-container"> 					<!--1-->
+								<div class="weather-widget">					<!--thoi-tiet-->
+									<div class="panel" id="left">
+										<div class="date">
+											Sunday, 19 Mar 2023
+										</div>
+										<div class="city">
+											<p>Ho Chi Minh</p>
+											<p>Sunny</p>
+										</div>
+										<div class="cloud">
+											<img src="img/clouds-and-sun.png" alt="">
+										</div>
+									</div>
+									<div class="panel" id="right">
+										<img src="img/hcm.png" alt="">
+									</div>
+									<div class="temp">
+										<img src="img/temperature.png" alt="">Temperature (°C): <span id="temp">1</span>
+									</div>
+									<div class="hum">
+										<img src="img/humidity.png" alt=""> Humidity (%): <span id="hum">1</span>
+									</div>
+									<div class="wind">
+										<img src="img/wind.png" alt=""> Wind speed (m/s): <span id="wind">1</span>
+									</div>
+									<div class="uv">
+										<img src="img/uv.png" alt=""> UV Ray: <span id="uv">1</span>
+									</div>
+								</div>
+								<div class="air-condition-slider">				<!--may-lanh-->
+									<div class="container-slider">
+										<img src="img/air-condition.png" alt="">
+										<div class="air-slider">
+											<input type="range" min="16" max="26" step="1" value="" id="air-condition-input">
+											<div class="val" id="air-condition-result">0</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  -->
+							<div class="mini-container"> 					<!--2-->
+								<div class="led-slider">						<!--bong-den-->
+									<div class="container-slider">
+									<img src="img/light-bulb.png" alt="">
+									<input type="range" min="0" max="100" step="1" value="" id="led">
+									<div class="val" id="led-result">0</div>
+									</div>
+								</div>
+								<div class="robot-vacuum-cleaner">				<!--robot-hut-bui-->
+									<div class="logo-and-sw">
+										<div class="logo-robot">
+											<img src="img/cleaning-robot.png" alt="">
+										</div>
+										<div class="button-robot">
+											<div class="sw-robot">
+												<p>Off</p>
+												<div class="toggle"></div>
+												<p>On</p>
+											</div>
+										</div>
+									</div>
+									<div class="map">
+										<img src="img/map.png" alt="">
+									</div>									  
+								</div>
+								<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/54pwfuYNEbkbFMri4WFolD?utm_source=generator&theme=0" width="100%" height="27.5%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+							</div>
+						</div>
+						<!-- END BEDROOM -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+	<script> 
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	const firebaseConfig = {
+	  apiKey: "AIzaSyAFL0_sKleduND15IfT5dM3LeCYnc1n0Vg",
+	  authDomain: "tt-iot-20139092.firebaseapp.com",
+	  databaseURL: "https://tt-iot-20139092-default-rtdb.firebaseio.com",
+	  projectId: "tt-iot-20139092",
+	  storageBucket: "tt-iot-20139092.appspot.com",
+	  messagingSenderId: "1001658581221",
+	  appId: "1:1001658581221:web:f5b565c4131d3f049fd40c",
+	  measurementId: "G-5HW4PD4LRP"
+	};
+	firebase.initializeApp(firebaseConfig);
+  	</script>
+  	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

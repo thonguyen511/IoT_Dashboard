@@ -1,0 +1,22 @@
+{
+  "TT_IoT": {
+    "livingroom": {
+      "air-condition": "19",
+      "light-bulb": "39",
+      "massage-chair": "Strongest vibration",
+      "robot": false,
+      "speaker-volume": 82,
+      "tv": {
+        "channel": 2,
+        "volume": 31
+      },
+      "weather": {
+        "hum": 68,
+        "temp": 30,
+        "uv": 12,
+        "wind": 4
+      },
+      "window": false
+    }
+  }
+}
